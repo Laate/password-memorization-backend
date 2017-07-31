@@ -1,0 +1,15 @@
+{
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": 0,
+    "indent": ["error", 4]
+  },
+  "extends": "airbnb-base"
+}
