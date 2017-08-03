@@ -17,7 +17,7 @@ const db = pgp(config);
 function saveGuess(req, res) {
     console.log(req.body);
     db.none(
-        'INSERT INTO guesses(user_id, session_id, node_id, user_input, node_text, full_text, is_left_correct, is_right_correct, is_correct)' +
+        'INSERT INTO guesses(user_id, session_id, node_id, user_input, node_text, full_text, left_ok, right_ok, ok)' +
         'VALUES($(userID), $(sessionID), $(nodeID), $(input), $(nodeText), $(fullText), $(isLeftCorrect), $(isRightCorrect), $(isCorrect))', req.body)
         .then(() => {
             console.log('guess entry created');

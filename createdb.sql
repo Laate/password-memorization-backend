@@ -10,9 +10,9 @@ CREATE TABLE guesses (
     user_input VARCHAR(100),
     node_text VARCHAR(100),
     full_text VARCHAR(100),
-    is_left_correct BOOLEAN,
-    is_right_correct BOOLEAN,
-    is_correct BOOLEAN,
+    left_ok BOOLEAN,
+    right_ok BOOLEAN,
+    ok BOOLEAN,
     guess_time TIMESTAMP DEFAULT NOW()
 )
 
