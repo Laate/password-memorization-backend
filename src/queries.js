@@ -11,12 +11,16 @@ const config = {
 
 const db = pgp(config);
 
-function insertEvent(req, res) {
+// TODO:
+// We always send back 500 when getting an error, even if the client sends an invalid request.
+// We should check for client error and send back 400.
+function saveGuess(req, res) {
     console.log(req.body);
-    db.none('INSERT INTO events(user_id, session_id, event_type, data)' +
-        'VALUES($(userID), $(sessionID), $(eventType), $(data))', req.body)
+    db.none(
+        'INSERT INTO guesses(user_id, session_id, node_id, user_input, node_text, full_text, is_left_correct, is_right_correct, is_correct)' +
+        'VALUES($(userID), $(sessionID), $(nodeID), $(input), $(nodeText), $(fullText), $(isLeftCorrect), $(isRightCorrect), $(isCorrect))', req.body)
         .then(() => {
-            console.log('event entry created');
+            console.log('guess entry created');
             res.send('ok');
         })
         .catch((error) => {
@@ -26,4 +30,4 @@ function insertEvent(req, res) {
 }
 
 
-module.exports = { insertEvent };
+module.exports = { saveGuess };

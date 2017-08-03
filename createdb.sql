@@ -2,11 +2,18 @@ CREATE DATABASE memodb;
 
 \c memodb
 
-CREATE TABLE events (
-    event_id SERIAL PRIMARY KEY,
-    user_id CHAR(10),
-    session_id CHAR(10),
-    event_type VARCHAR(30),
-    time TIMESTAMP DEFAULT NOW(),
-    data JSONB
+CREATE TABLE guesses (
+    guess_id SERIAL PRIMARY KEY,
+    user_id CHAR(10) CHECK (char_length(user_id) = 10),
+    session_id CHAR(10) CHECK (char_length(session_id) = 10),
+    node_id SMALLINT,
+    user_input VARCHAR(100),
+    node_text VARCHAR(100),
+    full_text VARCHAR(100),
+    is_left_correct BOOLEAN,
+    is_right_correct BOOLEAN,
+    is_correct BOOLEAN,
+    guess_time TIMESTAMP DEFAULT NOW()
 )
+
+

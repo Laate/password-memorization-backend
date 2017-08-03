@@ -13,7 +13,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.post('/api/event', db.insertEvent);
+app.post('/api/guess', db.saveGuess);
 
 app.listen(port, () => {
     if (!process.env.USER || !process.env.PASSWORD) {
