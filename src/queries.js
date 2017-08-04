@@ -5,8 +5,6 @@ const config = {
     host: 'localhost',
     port: '5432',
     database: 'memodb',
-    user: process.env.USER,
-    password: process.env.PASSWORD,
 };
 
 const db = pgp(config);

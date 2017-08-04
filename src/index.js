@@ -16,10 +16,5 @@ app.use((req, res, next) => {
 app.post('/api/guess', db.saveGuess);
 
 app.listen(port, () => {
-    if (!process.env.USER || !process.env.PASSWORD) {
-        throw new Error('Username and password to access database not supplied.\n' +
-            'Start the API with database credentials by typing:\n' +
-            'USER=foo PASSWORD=bar npm start');
-    }
     console.log(`API is running on port ${port}`);
 });
