@@ -20,11 +20,11 @@ function saveGuess(req, res) {
         'VALUES($(userID), $(sessionID), $(nodeID), $(input), $(nodeText), $(fullText), $(isLeftCorrect), $(isRightCorrect), $(isCorrect))', req.body)
         .then(() => {
             console.log('guess entry created');
-            res.send('ok');
+            res.sendStatus(200);
         })
         .catch((error) => {
             console.log(error);
-            res.send(500);
+            res.sendStatus(500);
         });
 }
 
