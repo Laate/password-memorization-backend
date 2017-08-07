@@ -13,6 +13,11 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get('/robots.txt', (req, res) => {
+    res.type('text/plain');
+    res.send('User-agent: *\nDisallow: /');
+});
+
 app.post('/api/guess', db.saveGuess);
 
 app.listen(port, () => {
