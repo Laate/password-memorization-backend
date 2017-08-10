@@ -10,6 +10,7 @@ CREATE TABLE guesses (
     user_input VARCHAR(100),
     node_text VARCHAR(100),
     full_text VARCHAR(100),
+    mem_count SMALLINT,
     left_ok BOOLEAN,
     right_ok BOOLEAN,
     guess_time TIMESTAMP DEFAULT NOW()
