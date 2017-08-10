@@ -12,7 +12,6 @@ CREATE TABLE guesses (
     full_text VARCHAR(100),
     left_ok BOOLEAN,
     right_ok BOOLEAN,
-    ok BOOLEAN,
     guess_time TIMESTAMP DEFAULT NOW()
 )
 

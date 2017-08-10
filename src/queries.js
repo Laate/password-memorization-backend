@@ -16,8 +16,8 @@ const db = pgp(config);
 // We should check for client error and send back 400.
 function saveGuess(req, res) {
     db.none(
-        'INSERT INTO guesses(user_id, session_id, node_id, user_input, node_text, full_text, left_ok, right_ok, ok)' +
-        'VALUES($(userID), $(sessionID), $(nodeID), $(input), $(nodeText), $(fullText), $(isLeftCorrect), $(isRightCorrect), $(isCorrect))', req.body)
+        'INSERT INTO guesses(user_id, session_id, node_id, user_input, node_text, full_text, left_ok, right_ok)' +
+        'VALUES($(userID), $(sessionID), $(nodeID), $(input), $(nodeText), $(fullText), $(isLeftCorrect), $(isRightCorrect))', req.body)
         .then(() => {
             debug(req.body);
             res.sendStatus(200);
