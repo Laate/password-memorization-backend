@@ -44,4 +44,5 @@ The API is built using Node and Express and it connects to a PostgreSQL database
     * To specify a port you need to set the `PORT` enviroment variable e.g. `PORT=8443 npm start`. 
       If a port is not specified the API defaults to port 5000
 
-
+        > If you want to run the API on a privileged port (i.e. port < 1024), it's not recommended to start it as root.     
+        > Instead use some other solution e.g. iptables, setcap or nginx. See this [Stack Overflow post](https://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode/23281401) for more information.
