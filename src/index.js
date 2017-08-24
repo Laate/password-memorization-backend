@@ -31,16 +31,16 @@ app.get('/robots.txt', (req, res) => {
 
 app.post('/api/guess', db.saveGuess);
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.HTTPS === 'enabled') {
     const options = {
-        key: fs.readFileSync('path/to/keys/placeholder-key.pem'),
-        cert: fs.readFileSync('path/to/keys/placeholder-cert.pem'),
+        key: fs.readFileSync('path/to/keys/placeholder-key.key'),
+        cert: fs.readFileSync('path/to/keys/placeholder-cert.crt'),
     };
     https.createServer(options, app).listen(port, () => {
-        console.log(`API is running on port ${port}`);
+        console.log(`API  is running on https://localhost:${port}`);
     });
 } else {
     http.createServer(app).listen(port, () => {
-        console.log(`API is running in dev mode on port ${port}`);
+        console.log(`API is running on http://localhost:${port}`);
     });
 }
