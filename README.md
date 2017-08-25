@@ -1,7 +1,8 @@
 # Memo-backend
 
 API used to collect information from a [frontend](https://version.aalto.fi/gitlab/usability-stylometry/password-memorization) containing a memorisation game.    
-The API is built using Node and Express and it connects to a PostgreSQL database.
+The API is built using Node and Express and it connects to a PostgreSQL database.   
+Uses [pg-promise](https://github.com/vitaly-t/pg-promise) to interface with Postgres.
 
 ## How to run
 
