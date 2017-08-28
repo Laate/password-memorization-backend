@@ -48,4 +48,4 @@ Uses [pg-promise](https://github.com/vitaly-t/pg-promise) to interface with Post
             cert: fs.readFileSync('/path/to/keys/placeholder-cert.crt'),
         };
         ```
-    > Another good solution for production deployments is to is to start the API without https, and then configure nginx with https, to act as a reverse proxy connecting to the http API.
+    > Another good solution for production deployments is to start the API without https, and then configure nginx with https, to act as a reverse proxy connecting to the http API.
